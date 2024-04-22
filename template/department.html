@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Department</title>
+    <style>
+        h3{
+            text-align: center;
+            color: rgb(71, 129, 223);
+        }
+        .boo1{
+            background-image: url('https://wallpapers.com/images/hd/medical-background-cjge7e89adg6ub8x.jpg');
+            background-size: cover;
+            background-position: center;
+            min-height: 100vh;
+            color: black;
+        }
+        .container {
+            max-width: 960px;
+            margin: auto;
+            padding: 20px;
+
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+
+        }
+
+        .card {
+            background-color: rgba(255, 255, 255, 0.8);
+            margin: 10px;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .card-title {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .card-text {
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    {% extends 'basic.html' %}
+    {% block content %}
+    <div class="boo1">
+        <h3>Our Departments</h3>
+        <div class="container">
+            <div class="row">
+                {% for i in departments %}
+                <div class="col-md-6 mb-4">
+                    <div class="card" style="height:540px">
+                        <div class="card-body">
+                            <h3 class="card-title">{{ i.dep_name }}</h3>
+                            <p class="card-text">{{ i.dep_details }}</p>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+            </div>
+        </div>
+    </div>
+
+    {% endblock %}
+</body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Booking</title>
+    <style>
+        h3{
+            text-align: center;
+            color: rgb(71, 129, 223);
+        }
+        .boo1{
+            background-image: url("https://5.imimg.com/data5/SELLER/Default/2021/8/LR/AP/SW/6976612/hospital-wallpaper-500x500.jpg");
+                background-size: cover;
+                background-position: center;
+                min-height: 100vh;
+                color: black;
+        }
+
+        .outer-box {
+            width: 400px;
+            margin: 50px auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            background-color: #bfd7ff;
+        }
+
+
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+
+        form input[type="text"],
+        form input[type="email"],
+        form textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+
+        form button[type="submit"] {
+            width: 100%;
+            padding: 10px 20px;
+            margin-top: 10px;
+            border: none;
+            border-radius: 4px;
+            background-color: rgb(71, 129, 223);
+            color: white;
+            cursor: pointer;
+        }
+
+
+        form button[type="submit"]:hover {
+            background-color: rgb(71, 129, 223);
+        }
+    </style>
+</head>
+<body>
+    {% extends 'basic.html' %}
+    {% block content %}
+    <div class="boo1">
+        <h3>Make an Appointment</h3>
+        <div class="outer-box">
+            <form method="post">
+                {% csrf_token %}
+                {{ myform }}
+                <button type="submit">Upload</button>
+            </form>
+        </div>
+    </div>
+    {% endblock %}
+</body>
+</html>
